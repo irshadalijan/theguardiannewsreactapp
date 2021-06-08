@@ -17,9 +17,10 @@ export default function Newsdetails() {
 
   useEffect(() => {
     if (newsInfo.isLoaded) {
-      var chkExists = listbookmarks.includes(response.content.id);
+      var alreadyBookmarked =
+        listbookmarks !== null && listbookmarks.includes(response.content.id);
 
-      if (chkExists === true) {
+      if (alreadyBookmarked === true) {
         setIsBookmarked(true);
         setBookmarkText("REMOVE BOOKMARK");
         setBookmarkicon(true);
@@ -36,10 +37,7 @@ export default function Newsdetails() {
       });
       localStorage.setItem("bookmarks", JSON.stringify(filteredlist));
     } else {
-      if (isBookmarked === true) {
-        console.log("allready bookmarked");
-      } else {
-        console.log("item bookmarked");
+      if (!isBookmarked) {
         listbookmarks.push(response.content.id);
         localStorage.setItem("bookmarks", JSON.stringify(listbookmarks));
       }
