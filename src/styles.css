@@ -1,0 +1,442 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --royalblue: #1d2c7e;
+  --clr-primary: #ee6352;
+  --clr-body: #333;
+  --clr-bg: #ddd;
+  --lightgrey: lightgrey;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+h1 {
+  display: inline;
+  padding-left: 5px;
+}
+select {
+  outline: none;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+.content {
+  margin-bottom: 2rem;
+  min-height: 500px;
+}
+
+/* Style the header */
+header {
+  background-color: var(--royalblue);
+  height: 75px;
+  font-size: 35px;
+  color: white;
+  top: 0;
+  overflow: hidden;
+}
+
+/* Container for flexboxes */
+section {
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Style the content */
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+
+footer {
+  bottom: 0;
+  width: 100%;
+  background-color: var(--royalblue);
+  height: 120px;
+  color: white;
+  display: flex;
+}
+
+.logo {
+  height: 45px;
+  margin: 10px auto;
+}
+
+.sorting {
+  margin-left: auto;
+  padding: 20px 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sorting select {
+  padding: 10px;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  font-size: 1rem;
+  margin-left: 10px;
+}
+
+.bookmarkbtn {
+  background-color: var(--royalblue);
+  color: #fff;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  padding: 0.35rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.bookmarkbtn a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.busyloading {
+  border: 8px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 8px solid var(--royalblue);
+  width: 80px;
+  height: 80px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 99999;
+}
+
+.searchcontent .card {
+  margin: 5px 5px !important;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.btred {
+  border-bottom: 1px solid red !important;
+}
+.btgreen {
+  border-bottom: 1px solid green !important;
+}
+
+.btyellow {
+  border-bottom: 1px solid yellow !important;
+}
+
+.btligtblue {
+  border-bottom: 1px solid lightblue !important;
+}
+
+.card h1,
+.card h2,
+.card h3,
+.detailspage h1,
+.detailspage h2,
+.detailspage h3 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.detailspage .leftcontent {
+  width: 73%;
+  float: left;
+  margin: auto 20px auto 0px;
+}
+
+.detailspage .leftcontent img {
+  max-width: 100%;
+}
+
+.detailspage .rightcontent {
+  width: 23%;
+  float: right;
+}
+.card a {
+  color: #fff !important;
+  text-decoration: none;
+}
+
+.w50 {
+  width: 50%;
+}
+
+.w48 {
+  width: 48%;
+}
+
+.w32 {
+  width: 32%;
+}
+
+.ml-2 {
+  margin-left: 2%;
+}
+
+.mr-2 {
+  margin-right: 2%;
+}
+
+.ml-5 {
+  margin-left: 5%;
+}
+
+.mr-5 {
+  margin-right: 5%;
+}
+
+.f-left {
+  float: left;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.large-card {
+  height: 340px;
+}
+
+.medium-card {
+  height: 320px;
+}
+
+.small-card {
+  height: 200px;
+}
+
+.small:last-child {
+  margin-left: 2%;
+}
+
+.card {
+  box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.08);
+  border: 0;
+  overflow: hidden;
+  position: relative;
+  min-width: 0;
+  word-wrap: break-word;
+  background-clip: border-box;
+  word-wrap: break-word;
+}
+
+.card-without-img {
+  background-color: var(--royalblue);
+  color: #fff;
+  padding: 0.5rem;
+}
+
+.card-img {
+  width: 100%;
+  background-color: #0c48a0;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-img-overlay {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0.5rem;
+  color: #ffffff;
+}
+
+.card-img-overlay * {
+  position: relative;
+  z-index: 1;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-img-overlay:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  background-color: var(--royalblue);
+  opacity: 0.9;
+  z-index: 0;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+/** search input **/
+
+.changephcolor::-webkit-input-placeholder {
+  color: var(--lightgrey);
+}
+.changephcolor:-moz-placeholder {
+  color: var(--lightgrey);
+  opacity: 1;
+}
+.changephcolor::-moz-placeholder {
+  color: var(--lightgrey);
+  opacity: 1;
+}
+.changephcolor:-ms-input-placeholder {
+  color: var(--lightgrey);
+}
+
+.searchinput {
+  float: right;
+  margin-top: 1.5rem;
+  border-bottom: solid 5px white;
+  padding-bottom: 0.8rem;
+}
+
+.searchfield {
+  outline: none;
+  margin-right: 5px;
+  display: inline-block;
+  height: 35px;
+  border: none;
+  background: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.searchfieldfocused {
+  background-color: #20509c;
+}
+
+.wauto {
+  width: auto !important;
+}
+
+.searchbtn {
+  margin-top: 18px;
+  float: right;
+  width: 32px;
+  border: 0;
+  cursor: pointer;
+  zoom: 1;
+  filter: alpha(opacity=65);
+  opacity: 0.65;
+  background: transparent url("assets/search-icon.svg") top left no-repeat;
+  -webkit-transition: all 0.4s linear;
+  -moz-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+}
+.searchbtn:hover,
+.searchbtn:focus {
+  filter: alpha(opacity=90);
+  opacity: 0.9;
+}
+.searchfield:focus + .searchbtn {
+  right: 10px;
+}
+
+@media (min-width: 990px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 750px) {
+  h3 {
+    font-size: 14px;
+  }
+  p {
+    font-size: 12px;
+  }
+  .w50,
+  .w48,
+  .w32 {
+    width: 100%;
+  }
+  .wrapper {
+    padding: 10px;
+  }
+  .row {
+    display: block;
+  }
+  .large-card,
+  .small-card,
+  .medium-card {
+    height: 250px;
+  }
+  .small-card,
+  .medium-card {
+    margin-top: 3%;
+  }
+  .card-without-img {
+    margin-top: 5%;
+  }
+  .f-left {
+    float: none;
+  }
+  .bookmarkbtn {
+    font-size: 14px;
+  }
+  .searchcontent .card {
+    margin: auto;
+  }
+  .searchfield {
+    width: 150px !important;
+  }
+}
