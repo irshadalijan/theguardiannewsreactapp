@@ -63,7 +63,7 @@ export default function Homepage() {
             </select>
           </div>
         </section>
-        <div class="wrapper">
+        <div className="wrapper">
           <div className="row mt-1">
             {categoryBasedNews.isLoaded ? (
               <NewsItems

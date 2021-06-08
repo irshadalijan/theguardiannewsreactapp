@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import bookmarkoff from "../assets/bookmarkoff.svg";
 import bookmarkon from "../assets/bookmarkon.svg";
 import useCallGuardianApi from "../utils/useCallGuardianApi";
@@ -13,12 +13,14 @@ export default function Newsdetails() {
   const newsInfo = useCallGuardianApi(slug, "format=json");
   const info = newsInfo;
   const response = info.data;
-  let listbookmarks = JSON.parse(localStorage.getItem("bookmarks"));
+  const boomarksArr = JSON.parse(localStorage.getItem("bookmarks"));
+  let listbookmarks = useMemo(() => {
+    return boomarksArr || [];
+  }, [boomarksArr]);
 
   useEffect(() => {
     if (newsInfo.isLoaded) {
-      var alreadyBookmarked =
-        listbookmarks !== null && listbookmarks.includes(response.content.id);
+      var alreadyBookmarked = listbookmarks.includes(response.content.id);
 
       if (alreadyBookmarked === true) {
         setIsBookmarked(true);
@@ -26,7 +28,7 @@ export default function Newsdetails() {
         setBookmarkicon(true);
       }
     }
-  }, [newsInfo, listbookmarks, response]);
+  }, [newsInfo.isLoaded, listbookmarks, response]);
 
   function handleBookmark() {
     setBookmarkicon(!bookmarkicon);
