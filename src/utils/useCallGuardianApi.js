@@ -34,7 +34,7 @@ export default function useCallGuardianApi(param, filterText = "") {
     return () => {
       setIsLoaded(false);
     };
-  }, [url]);
+  }, [url, filterText]);
 
   return { error, isLoaded, data };
 }

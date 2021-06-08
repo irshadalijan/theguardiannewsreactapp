@@ -13,7 +13,7 @@ export default function Newsdetails() {
   const newsInfo = useCallGuardianApi(slug, "format=json");
   const info = newsInfo;
   const response = info.data;
-  const listbookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
+  let listbookmarks = JSON.parse(localStorage.getItem("bookmarks"));
 
   useEffect(() => {
     if (newsInfo.isLoaded) {
@@ -25,7 +25,7 @@ export default function Newsdetails() {
         setBookmarkicon(true);
       }
     }
-  }, [newsInfo.isLoaded]);
+  }, [newsInfo, listbookmarks, response]);
 
   function handleBookmark() {
     setBookmarkicon(!bookmarkicon);

@@ -30,14 +30,14 @@ export default function SearchResults() {
       setTotalPages(searchBasedNews.data.pages);
       setSearchResults(searchBasedNews.data.results);
     }
-  }, [searchBasedNews.isLoaded]);
+  }, [searchBasedNews]);
 
   useEffect(() => {
     if (moreNews.isLoaded) {
       searchResults.push(...moreNews.data.results);
       setSearchResults(searchResults);
     }
-  }, [currPage]);
+  }, [moreNews, searchResults]);
 
   function handleSorting(e) {
     setSorting(e.target.value);
