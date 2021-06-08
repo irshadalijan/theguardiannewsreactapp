@@ -8,3 +8,4 @@ install the dependencies for the app to run.
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To view it live in production visit https://thepeaks-guardian-news.netlify.app/
