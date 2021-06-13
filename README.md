@@ -1,11 +1,10 @@
-## Please run following commands in command line terminal which must be opened in root directory
+# Displaying and searchcing News from The Guardian using thier open API Platform
 
-### `npm install`
-
-install the dependencies for the app to run.
-
-### `npm start`
+1. Get your free API Key from https://open-platform.theguardian.com/
+2. Rename .env-sample to .env and update the REACT_APP_GUARDIAN_API_KEY value to your own API key
+3. npm install (install the dependencies for the app to run.)
+4. npm start
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-To view it live in production visit https://thepeaks-guardian-news.netlify.app/
+To view it live in production visit https://theguardian-news.netlify.app/
