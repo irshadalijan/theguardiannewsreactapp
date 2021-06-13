@@ -1,4 +1,4 @@
-# Displaying and searchcing News from The Guardian using thier open API Platform
+# Displaying and searching News from The Guardian using their open API Platform
 
 1. Get your free API Key from https://open-platform.theguardian.com/
 2. Rename .env-sample to .env and update the REACT_APP_GUARDIAN_API_KEY value to your own API key
